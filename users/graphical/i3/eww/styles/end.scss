@@ -1,0 +1,57 @@
+//Circular Progress
+.bat_graph_outer {
+    color: $Green;   
+    margin-right: 0.75rem;   
+} 
+
+
+.bat_graph_inner{  
+    font-size: 12px;  
+    font-weight: bolder;
+    color: white; 
+    padding: 0.45rem; 
+}    
+
+//Endbox 
+.end_bx{
+    background-color: $Gray;    
+    margin: 7px; 
+    border-radius: 7px; 
+}  
+
+//time
+.bar_time{
+    font-size: 12px;    
+    font-weight: bolder;
+    background-color: $Lightblue;    
+    color: $Background;
+    padding: 0 0.3rem;  
+    margin: 0.25rem 0.25rem; 
+    border-radius: 6px;
+} 
+
+//wifi  
+.simple_wifi{
+    margin: 0 0.3rem;   
+    color: $Lightgray;
+    font-weight: bolder;
+} 
+
+.wifi_icon{
+    color: $Red;  
+    margin-right: 0.2rem; 
+    font-size: 15px;
+}
+
+.works { 
+    margin-left: 0.3rem;
+    font-size: 22px; 
+} 
+
+.true, .false{
+    padding: 0 0.5rem;  
+} 
+
+.false{
+    color: lightgray;
+}

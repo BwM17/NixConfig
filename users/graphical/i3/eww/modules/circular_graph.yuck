@@ -1,0 +1,20 @@
+
+
+(defwidget circular [class_outer value thickness class_inner text]   
+    (box  
+        :class class_outer  
+        :space-evenly false 
+        :hexpand false
+        :vexpand false
+        (eventbox) 
+        (circular-progress
+            :value value
+            :thickness thickness  
+        (label   
+            :class class_inner
+            :text text
+        )
+        ) 
+        
+    )
+)

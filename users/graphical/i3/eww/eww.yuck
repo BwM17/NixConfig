@@ -1,0 +1,17 @@
+(include "modules/vars.yuck")   
+(include "modules/windows.yuck")   
+(include "modules/works.yuck")    
+(include "modules/bar.yuck")  
+(include "modules/time.yuck")  
+(include "modules/hslider.yuck")    
+(include "modules/power.yuck") 
+(include "modules/wifi.yuck")  
+(include "modules/slider.yuck")
+(include "modules/circular_graph.yuck")
+
+
+
+
+
+
+

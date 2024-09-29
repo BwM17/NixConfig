@@ -1,0 +1,20 @@
+;;listeners 
+(deflisten workspaces "scripts/workspaces")    
+
+
+;;polls
+(defpoll time :interval "1s" "date '+%H:%M'") 
+(defpoll bat :interval "4s" "acpi -b | grep -oP '\\d+%' | tr -d '%'") 
+(defpoll vol :interval "1s" "amixer get Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'") 
+(defpoll bri :interval "1s" "brightnessctl i  | sed -n 2p | awk '{print $4}' | awk '{print substr($0, 2, length($0) - 3)}'") 
+(defpoll ssid :interval "4s" "scripts/wifi --ssid") 
+(defpoll wifi_status :interval "4s" "scripts/wifi --status") 
+
+
+
+;;vars 
+(defvar eww "$HOME/.nix-profile/bin/eww -c $HOME/.config/eww/i3") 
+(defvar pow_reveal false)   
+(defvar vol_reveal false) 
+(defvar bri_reveal false) 
+(defvar qui_reveal false)

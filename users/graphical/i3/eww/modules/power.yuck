@@ -1,0 +1,42 @@
+;;PowerWidget 
+
+
+(defwidget power []
+    (box 
+        :class "power-bx"
+        :valign "center" 
+        :halign "end"
+        :space-evenly false 
+        :vexpand false 
+        (eventbox 
+            :cursor "default"
+            :onhover "${eww} update pow_reveal=true"
+            :onhoverlost "${eww} update pow_reveal=false" 
+            (box
+                :space-evenly false 
+                (revealer
+                    :duration "400ms"
+                    :transition "slideright"
+                    :reveal pow_reveal 
+                (box
+                    :class "reval-btn-bx"
+                    :hexpand false
+                        (button :class "exi-btn" :onclick "i3-msg exit" "󰗼")
+                        (button :class "hib-btn" :onclick "systemctl hibernate" "󰨣")
+                        (button :class "sus-btn" :onclick "systemctl suspend" "󰤄")
+                        (button :class "reb-btn" :onclick "systemctl reboot" "󰑓 ")
+                        (button :class "pow-btn" :onclick "systemctl poweroff" " "))
+                )
+                (box 
+                    :class "pfp_smoll"     
+                    (image
+                        :path "img/pfp.png" 
+                        :image-width 25
+                        :image-height 25
+                    )
+
+                ) 
+            )
+        ) 
+    )
+)

@@ -1,0 +1,106 @@
+
+(defwidget bar []
+    (centerbox 
+        (start)
+        ""  
+        (end)
+    )
+)  
+
+
+(defwidget start []     
+    (box
+        :class "start"
+        :halign "start"
+        :vexpand false 
+        :hexpand false 
+        :space-evenly false  
+        (box  
+            :space-evenly false
+            :class "os_icon"
+            (image
+                :path "img/nixos_logo.png" 
+                :image-width 25
+                :image-height 25
+            )
+        )
+        (workspaces) 
+    )
+)
+
+
+(defwidget end []
+    (box 
+        :class "end" 
+        :halign "end"
+        :hexpand false
+        :vexpand false 
+        :space-evenly false  
+        (box  
+            :class "end_bx" 
+            :space-evenly false 
+            (eventbox  
+                :onclick "scripts/qsettings"
+            (box 
+                :space-evenly false
+            (box 
+                :class "wifi-bx" 
+                (simple_wifi)
+            )
+            (revealer
+                :reveal qui_reveal
+                :duration "400ms" 
+                :transition "slideleft" 
+            (box 
+                :space-evenly false 
+            (box  
+                :class "bri_outer"
+                :space-evenly false
+            (hslider 
+                :onhover "${eww} update bri_reveal=true"
+                :onhoverlost "${eww} update bri_reveal=false"
+                :reveal bri_reveal
+                :slider_class "bri_slider"
+                :value bri 
+                :onchange "brightnessctl set {}%"
+                :label_class "bri_label" 
+                :icon "" 
+                :icon_class "bri_icon"
+                :text "${bri}%" 
+            )
+        )  
+        (box  
+            :class "vol_outer" 
+            :space-evenly false
+            (hslider
+                :onhover "${eww} update vol_reveal=true"
+                :onhoverlost "${eww} update vol_reveal=false"
+                :reveal vol_reveal
+                :slider_class "vol_slider" 
+                :value vol
+                :onchange "amixer sset Master {}%"
+                :label_class "vol_label"  
+                :icon_class "vol_icon"
+                :icon "󰓃"
+                :text "${vol}%"
+            ) 
+        )
+    ) 
+    )  
+    
+        (simple_time
+            :class "bar_time" 
+        )  
+            )
+    ) 
+)
+;;       (circular
+;;           :class_outer "bat_graph_outer" 
+;;            :value bat
+;;            :thickness 3
+;;            :class_inner "bat_graph_inner"
+;;            :text "${bat}"
+;;        )  
+        (power)
+      ) 
+    ) 

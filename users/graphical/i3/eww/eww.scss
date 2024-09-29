@@ -1,0 +1,24 @@
+@import "styles/ColorSchemes/PastelNight.scss";
+@import "styles/power.scss";
+@import "styles/hsliders.scss"; 
+@import "styles/start.scsss";
+@import "styles/end.scss"; 
+
+
+*{ 
+    all:unset;
+    font-family: "Iosevka Nerd Font";
+}
+
+
+.bar {
+    background-color: $Background;
+    color: #fefefe;
+}  
+
+
+
+
+
+
+

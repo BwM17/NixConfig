@@ -1,0 +1,43 @@
+(defwidget hslider [onhover onhoverlost reveal slider_class value onchange label_class text icon icon_class] 
+    (box
+        :space-evenly false 
+        (eventbox 
+            :cursor "default" 
+            :valign "center" 
+            :onhover onhover
+            :onhoverlost onhoverlost
+            (box  
+                :space-evenly false
+                (revealer 
+                    :duration "400ms" 
+                    :transition "slideright" 
+                    :reveal reveal
+                    (box  
+                        :class slider_class
+                        (scale 
+                            :value vol
+                            :onchange onchange
+                            :min 0
+                            :max 101 
+                            :flipped true
+                        )
+                    )
+                ) 
+                (box   
+                    :class label_class   
+                    :space-evenly false
+                    (box 
+                        :class icon_class
+                        (label  
+                            :text icon
+                        ) 
+                    )
+                    (label
+                        :text text
+                    )
+                )
+            )
+        ) 
+
+    )
+)

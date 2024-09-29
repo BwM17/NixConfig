@@ -1,0 +1,19 @@
+(defwidget slider[class value icon_class icon onchange]  
+    (overlay 
+        (box 
+            :class class
+            (scale 
+                :min 0
+                :max 100   
+                :value value  
+                :onchange onchange
+            )
+        )
+        (label 
+            :class icon_class  
+            :valign "center" 
+            :halign "start"
+            :text icon
+        )  
+    ) 
+)

@@ -1,0 +1,8 @@
+(defwidget simple_time[class] 
+    (box 
+        :class class 
+        (label
+            :text time
+        )
+    )
+)

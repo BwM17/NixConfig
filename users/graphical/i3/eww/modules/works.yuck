@@ -1,0 +1,5 @@
+(defwidget workspaces []
+    (literal 
+        :content workspaces
+    )
+)

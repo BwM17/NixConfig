@@ -1,0 +1,9 @@
+#!/usr/bin/env bash 
+ 
+STATE=$(eww -c $HOME/.config/eww/i3 get qui_reveal)  
+
+if [[ $STATE == "true" ]]; then   
+  eww -c $HOME/.config/eww/i3 update qui_reveal=false
+else
+  eww -c $HOME/.config/eww/i3 update qui_reveal=true
+fi

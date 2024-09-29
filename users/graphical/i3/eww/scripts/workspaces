@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+
+# Function to iterate through i3 workspaces
+get_workspaces() {
+    i3-msg -t get_workspaces | jq -r '.[] | .num, .visible'
+}
+
+visible_icon (){
+    local icon=$1
+    case "$icon" in
+    
+    "1")
+    echo "󰎤"
+    ;; 
+
+    "2")
+    echo "󰎧"
+    ;; 
+
+    "3")
+    echo "󰎪"
+    ;; 
+
+    "4")
+    echo "󰎭"
+    ;; 
+
+    "5")
+    echo "󰎱"
+    ;; 
+
+    "6")
+    echo "󰎳"
+    ;; 
+
+    *) 
+    echo NaN
+    ;; 
+    esac 
+}
+
+active_icon (){
+    local icon=$1
+    case "$icon" in
+    
+    "1")
+    echo "󰎦"
+    ;; 
+
+    "2")
+    echo "󰎩"
+    ;; 
+
+    "3")
+    echo "󰎬"
+    ;; 
+
+    "4")
+    echo "󰎮"
+    ;; 
+
+    "5")
+    echo "󰎰"
+    ;; 
+
+    "6")
+    echo "󰎵"
+    ;; 
+
+    *) 
+    echo NaN
+    ;; 
+    esac 
+}
+
+
+print_workspace_info() {
+# Iterate through workspaces
+while read -r number; read -r vis; do
+
+    if [[ $vis == "true" ]]; then 
+        icon="$(visible_icon $number)"
+        
+
+    else 
+        icon="$(active_icon $number)"
+        
+    fi
+    
+    local buf+="(eventbox :cursor \"pointer\" (button :class \"$vis\" :onclick \"i3-msg workspace $number \" \"$icon\"))" 
+done < <(get_workspaces)
+    echo "(box :orientation \"h\" :class \"works\" :spacing 3 :halign \"center\" :valign \"center\" :vexpand \"true\" :hexpand \"true\" $buf)"  
+
+}
+
+
+print_workspace_info
+
+# Watch for workspace events
+i3-msg -t subscribe -m '["workspace"]' | while read -r event; do
+    print_workspace_info
+done

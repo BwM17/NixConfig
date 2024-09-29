@@ -1,0 +1,17 @@
+(defwidget simple_wifi[]
+    (box 
+        :class "simple_wifi"   
+        :space-evenly false
+        :spacing 7
+        (box 
+            :class "wifi_icon"
+            (label 
+                :text wifi_status
+            )
+        ) 
+        (label
+            :text ssid 
+            :limit-width 12
+        )
+    )
+)

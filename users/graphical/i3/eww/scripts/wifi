@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+function get_ssid(){
+    iwgetid -r 
+}  
+
+
+function get_wifi_status(){ 
+    Interface=$(iwgetid | awk '{print $1'});    
+
+    if [ "$Interface" == "wlp0s20f3" ]; then 
+        echo "󰖩"
+    else
+        echo "󰖪"
+    fi
+
+} 
+
+
+case $1 in 
+
+    "--ssid" ) 
+    get_ssid 
+    ;; 
+
+    "--status" ) 
+    get_wifi_status
+    ;;
+ 
+
+    *) 
+    echo "Use --ssid or --status" 
+    ;;
+esac
+
+

@@ -1,0 +1,13 @@
+(defwindow bar
+    :monitor 0
+    :geometry (geometry 
+        ;;:x "0px"
+        ;;:y "0px" 
+        :width "100%" 
+        :height "45px"
+        :anchor "top center"
+    )
+        :windowtype "dock" 
+        :wm-ignore false   
+        (bar)
+)

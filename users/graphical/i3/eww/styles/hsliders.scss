@@ -1,0 +1,51 @@
+
+.vol_slider, .bri_slider scale trough{   
+    all:unset; 
+    min-height: 10px;    
+    min-width: 100px; 
+    border-radius: 50px;   
+    background-color: $Alt-Gray;
+    padding: 0.1rem 
+} 
+
+
+.vol_slider scale trough highlight{
+    background: linear-gradient(to left, $Green, $LightGreen); 
+    border-radius: 50px; 
+    min-height: 10px;  
+    padding: 0.2rem 0.1rem;
+    margin: 0.2rem;
+}  
+
+.bri_slider scale trough highlight{
+    background: linear-gradient(to left, $Orange, $Yellow);  
+    border-radius: 50px; 
+    min-height: 10px; 
+    padding: 0.2rem 0.1rem; 
+    margin: 0.2rem; 
+} 
+
+
+.vol_label, .bri_label{ 
+    color: $Lightgray;
+    font-size: 15px;   
+    margin-left: 0.5rem;
+    font-weight: bolder;
+}
+
+
+.bri_outer, .vol_outer{ 
+    padding: 0.2rem 0.1rem; 
+    margin: 0 0.2rem; 
+} 
+
+.vol_icon {
+    color: $Green; 
+    margin-right: 0.15rem;  
+} 
+
+
+.bri_icon {
+    color: $Yellow; 
+    margin-right: 0.55rem;
+}
