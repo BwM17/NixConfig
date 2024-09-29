@@ -2,6 +2,7 @@
 ---
 ## Todos
 
--[ ] fix eww in i3 config
--[ ] grafana as oci-container
--[ ] hyperlandconfig 
+- [ ] fix eww in i3 config
+- [ ] grafana as oci-container
+- [ ] hyperlandconfig 
+- [ ] firewall configuration
